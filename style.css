@@ -1,0 +1,10 @@
+.actionButton {
+    margin: 5px;
+    padding: 10px;
+    /* Добавь сюда нужные стили для кнопок */
+ }
+ 
+ #content {
+    text-align: center;
+    /* Другие стили для контейнера */
+ }
