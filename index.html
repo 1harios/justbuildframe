@@ -2,17 +2,69 @@
 <html>
 <head>
     <title>Warpcast Frame</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+            text-align: center;
+        }
+        .button {
+            margin: 10px;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        #initialImage, #finalImage {
+            max-width: 90%;
+            height: auto;
+        }
+        #finalImage, #actionButtons {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <div id="content">
-        <img id="initialImage" src="initial.jpg">
-        <div id="buttons">
-            <button class="actionButton" onclick="changeContent()">Builder 1</button>
-            <button class="actionButton" onclick="changeContent()">Builder 2</button>
-            <button class="actionButton" onclick="changeContent()">Builder 3</button>
+    <div class="container">
+        <!-- Initial Image and Buttons -->
+        <img id="initialImage" src="your_initial_image_URL_here" alt="Initial Image">
+        <div id="builderButtons">
+            <button class="button" onclick="selectBuilder()">Builder Type 1</button>
+            <button class="button" onclick="selectBuilder()">Builder Type 2</button>
+            <button class="button" onclick="selectBuilder()">Builder Type 3</button>
+        </div>
+
+        <!-- Final Image and Subscription/Share Buttons -->
+        <img id="finalImage" src="your_final_image_URL_here" alt="Final Image">
+        <div id="actionButtons">
+            <button class="button" onclick="subscribe()">Subscribe</button>
+            <button class="button" onclick="share()">Share</button>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        function selectBuilder() {
+            // Hide initial setup
+            document.getElementById('initialImage').style.display = 'none';
+            document.getElementById('builderButtons').style.display = 'none';
+
+            // Show final actions
+            document.getElementById('finalImage').style.display = 'block';
+            document.getElementById('actionButtons').style.display = 'block';
+        }
+
+        function subscribe() {
+            alert('Subscribed!');
+            // Here you can add your subscription logic
+        }
+
+        function share() {
+            alert('Ready to Share!');
+            // Here you can add your sharing logic
+        }
+    </script>
 </body>
 </html>
